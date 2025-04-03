@@ -8,8 +8,16 @@ const router = createRouter({
    
     {
       path: '/',
-      name: 'projects',
+      name: 'home',
+      redirect: {name: 'projects'},
       component: ProjectsLayout,
+      children:[
+        {
+          path:'/projects',
+          name:'projects',
+          component: () => import('@/modulorum/projects/views/ProjectsView.vue'),
+        }
+      ]
    }
   
   ],
