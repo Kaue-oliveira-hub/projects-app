@@ -26,6 +26,7 @@
 
 </div>
 
+<ImputModal />
 <fav-button @click="() => console.log('clicked')">
   <AddCircle />
 
@@ -37,6 +38,8 @@
 <script lang="ts" setup>
 import AddCircle from '@/modulorum/commune/icons/AddCircle.vue';
 import FavButton from '../components/FavButton.vue';
+import ImputModal from '@/modulorum/commune/components/ImputModal.vue';
+
 
 
 </script>
