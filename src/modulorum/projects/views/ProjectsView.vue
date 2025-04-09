@@ -26,10 +26,16 @@
 
 </div>
 
-<FavButton />
+<fav-button @click="() => console.log('clicked')">
+  <AddCircle />
+
+</fav-button>
+
+
 </template>
 
 <script lang="ts" setup>
+import AddCircle from '@/modulorum/commune/icons/AddCircle.vue';
 import FavButton from '../components/FavButton.vue';
 
 
