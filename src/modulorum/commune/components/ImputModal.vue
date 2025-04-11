@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 
 interface Props {
@@ -36,7 +36,7 @@ interface Props {
     subtitulus:string;
     
 }
-defineProps<Props>();
+const props = defineProps<Props>();
 
 
 
@@ -48,6 +48,19 @@ valorem: [text: string]
 const inputValorem = ref('')
 
 const inputRef = ref<HTMLInputElement | null>(null);
+
+
+watch ( props,  ({ aperta}) =>{
+
+  setTimeout(() => {
+    if(aperta){
+        inputRef.value?.focus();
+    }
+  }, 300);
+
+
+});
+
 
 const submitValorem = () =>{
 

@@ -11,13 +11,14 @@
         <th>Avance</th>
       </tr>
     </thead>
+
     <tbody>
-  
-      <tr class="hover:bg-base-300">
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
+      
+      <tr v-for="(project, index) in projectStore.projectList" :key="project.id" class="hover:bg-base-300">
+        <th>{{ index + 1 }}</th>
+        <td>{{ project.nomen }}</td>
+        <td>{{ project.chores.length }}</td>
+        <progress class="progress progress-secondary w-56" value="10" max="100"></progress>
       </tr>
 
     </tbody>
@@ -29,7 +30,7 @@
 <ImputModal 
 :aperta="modalAperta" 
 @claudere="modalAperta=false"
-@valorem="cumNovusValorem"
+@valorem="projectStore.addereProject"
 placeholder="Nombre del proyecto"
 titulus="Nuevo Proyecto"
 subtitulus="Escribe el nombre del nuevo proyecto"
@@ -84,11 +85,5 @@ const propriumModalAperta = ref(false);
 
 const projectStore = useProjectsStore();
 
-const cumNovusValorem = ( projectNome:string ) => {
-    console.log({ projectNome });
-    // Aqui puedes agregar la lógica para manejar el nuevo proyecto
-    // Por ejemplo, hacer una llamada a la API para crear un nuevo proyecto
-    // o actualizar el estado de tu aplicación.
-};
 
 </script>
