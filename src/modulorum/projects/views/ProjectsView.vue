@@ -75,11 +75,14 @@ import ImputModal from '@/modulorum/commune/components/ImputModal.vue';
 import { ref } from 'vue';
 import PropriumModal from '@/modulorum/commune/components/PropriumModal.vue';
 import ModalIcon from '@/modulorum/commune/icons/ModalIcon.vue';
+import { useProjectsStore } from '../stores/projects.store';
 
 
 const modalAperta = ref(false);
 
 const propriumModalAperta = ref(false);
+
+const projectStore = useProjectsStore();
 
 const cumNovusValorem = ( projectNome:string ) => {
     console.log({ projectNome });
